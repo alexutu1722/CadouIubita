@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentru Iubita Mea ❤️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="envelope-wrapper" id="envelopeWrapper">
+        <div class="envelope">
+            <div class="envelope-top"></div>
+            <div class="envelope-body"></div>
+            <div class="heart"></div> 
+        </div>
+        
+        <div class="letter" id="loveLetter">
+            <p><strong>Dragostea Mea,</strong></p>
+            
+            <p>Aș vrea să-ți spun cât de mult însemni pentru mine. Ești cea mai minunată persoană pe care am cunoscut-o, iar zâmbetul tău îmi luminează fiecare zi. Îți mulțumesc pentru tot ce faci și pentru că ești tu. Mi-ai dăruit nenumărate oportunități de a-ți demonstra iubirea și respectul pe care ți le port în inimă.</p>
+            
+            <p>Și totuși, cea mai profundă revelație o găsesc în fiecare dimineață, când mă pierd în profunzimea acelui smarald ce-ți strălucește în privire: **ochii tăi verzi**. Ei nu sunt doar o culoare, ci ferestre către o liniște pe care nu am găsit-o nicăieri altundeva. În ei văd nu doar prezentul, ci ecouri ale unui trecut comun și promisiunea unui viitor de neclintit. Această conexiune este mai mult decât o întâmplare, este o rezonanță sufletească.</p>
+            
+            <p>Dumnezeu ne-a adus până aici și noi merităm să ajungem și mai departe, cu ajutorul lui vom reuși cum nici nu ne-am imaginat. Scriu aceste rânduri pline de entuziasm și blândețe, așteptând să-ți văd reacția de pe chipul tău slavon. Numele de regină pe care îl sărbătorim este un dar, să știi, **Elisabeta** semnifica multe lucruri printre care și:</p>
+            
+            <ul>
+                <li>"Dumnezeu este jurământul meu"</li>
+                <li>"Jurământ al lui Dumnezeu"</li>
+                <li>"Casa mea este Dumnezeu"</li>
+            </ul>
+
+            <p>Așa că este scris că ești specială, iubita mea. Sub cerul acesta vast, noi nu ne-am întâlnit pur și simplu; **ne-am recunoscut**. Ceea ce ne unește este acea certitudine tăcută că fiecare obstacol pe care îl vom întâlni nu e menit să ne despartă, ci să ne cizeleze legătura într-un diamant. Chiar și în fața necunoscutului, jurământul este deja rostit nu doar prin nume, ci prin felul în care sufletele noastre s-au legat. Ești certitudinea mea într-o lume a efemerului, **ancora mea de granit**.</p>
+            
+            <p style="text-align: center; margin-top: 20px;">Nu uita, așa cum stă scris:</p>
+
+            <p style="text-align: center; font-weight: bold; font-size: 1.1em;">"Dragostea nu piere niciodată."<br>(1 Corinteni 13:8a)</p>
+
+            <p class="signature">Cu toată dragostea, <br> Iubitul Tau</p>
+        </div>
+    </div>
+
+    <script>
+        const wrapper = document.getElementById('envelopeWrapper');
+        const letter = document.getElementById('loveLetter');
+
+        // Adaugă event listener pentru a deschide plicul la click
+        wrapper.addEventListener('click', () => {
+            wrapper.classList.add('open'); 
+            
+            // Scoate scrisoarea afară cu o mică întârziere (pentru animație)
+            setTimeout(() => {
+                letter.style.opacity = 1;
+                letter.style.transform = 'translateY(-200px) scale(1.05)'; 
+            }, 500);
+        });
+    </script>
+</body>
+</html>
