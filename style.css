@@ -13,14 +13,14 @@ body {
     position: relative;
     cursor: pointer;
     perspective: 1000px;
-    margin-top: 150px; /* Împinge tot plicul mai jos pe pagină */
+    margin-top: 150px; 
 }
 
 /* PLICUL */
 .envelope {
     width: 300px;
     height: 200px;
-    background: #FFDAB9; /* Culoare plăcută pentru plic (PeachPuff) */
+    background: #FFDAB9; 
     position: relative;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -33,7 +33,7 @@ body {
     height: 100%;
     position: absolute;
     border: 150px solid #FFDAB9; 
-    border-bottom-color: #f7a060; /* O mică umbră jos */
+    border-bottom-color: #f7a060; 
     border-radius: 5px;
     box-sizing: border-box;
     z-index: 1;
@@ -48,11 +48,11 @@ body {
     left: 0;
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
-    border-top: 100px solid #f7a060; /* Culoarea clapei (un pic mai închisă) */
+    border-top: 100px solid #f7a060; 
     border-radius: 5px;
     z-index: 3;
     transform-origin: top;
-    transition: transform 0.5s ease; /* Animația de deschidere */
+    transition: transform 0.5s ease; 
 }
 
 /* INIMA */
@@ -60,7 +60,7 @@ body {
     position: absolute;
     width: 30px;
     height: 30px;
-    background-color: #ff69b4; /* Roz aprins */
+    background-color: #ff69b4; 
     transform: rotate(-45deg);
     top: 50%;
     left: 50%;
@@ -88,9 +88,9 @@ body {
     top: 10%;
     left: 10%;
     border-radius: 5px;
-    z-index: 10; /* FIX: Asigură că scrisoarea este deasupra plicului deschis */
+    z-index: 20; /* FIX FINAL: Setat la o valoare foarte mare */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    opacity: 0; /* Invizibilă inițial */
+    opacity: 0; 
     transition: transform 1s ease, opacity 1s ease; 
     text-align: left;
     line-height: 1.6;
@@ -104,18 +104,18 @@ body {
 
 /* ANIMAȚIA DE DESCHIDERE (Clasa adăugată prin JavaScript) */
 .envelope-wrapper.open .envelope-top {
-    transform: rotateX(180deg); /* Clapa se deschide */
+    transform: rotateX(180deg); 
     z-index: 0; /* Clapa se duce în spate, sub scrisoare */
 }
 .envelope-wrapper.open .heart {
-    opacity: 0; /* Inima dispare când se deschide */
+    opacity: 0; 
 }
 
 /* Stiluri pentru flori (iconițe Font Awesome) */
 .flower {
     position: absolute;
-    font-size: 80px; /* Dimensiunea florii/pictogramei */
-    color: #cc0066;  /* Culoarea florilor (un roz intens) */
+    font-size: 80px; 
+    color: #cc0066;  
     z-index: 0; /* Sub plic */
     transition: transform 0.5s ease, opacity 0.5s ease; 
 }
