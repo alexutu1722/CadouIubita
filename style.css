@@ -1,5 +1,5 @@
 body {
-    background: #f0f0f0; /* Fundal plăcut */
+    background: #f0f0f0; 
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,7 +88,7 @@ body {
     top: 10%;
     left: 10%;
     border-radius: 5px;
-    z-index: 2;
+    z-index: 10; /* FIX: Asigură că scrisoarea este deasupra plicului deschis */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0; /* Invizibilă inițial */
     transition: transform 1s ease, opacity 1s ease; 
@@ -105,7 +105,7 @@ body {
 /* ANIMAȚIA DE DESCHIDERE (Clasa adăugată prin JavaScript) */
 .envelope-wrapper.open .envelope-top {
     transform: rotateX(180deg); /* Clapa se deschide */
-    z-index: 0; /* Mută clapa sub scrisoare */
+    z-index: 0; /* Clapa se duce în spate, sub scrisoare */
 }
 .envelope-wrapper.open .heart {
     opacity: 0; /* Inima dispare când se deschide */
