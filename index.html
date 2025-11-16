@@ -17,11 +17,11 @@
             <div class="heart"></div> 
         </div>
         
-        <i class="fas fa-hand-holding-heart flower rose-left"></i>
-        <i class="fas fa-hand-holding-heart flower tulip-right"></i>
-        <i class="fas fa-hand-holding-heart flower peony-top"></i>
+        <i class="fas fa-rose flower rose-left"></i>
+        <i class="fas fa-rose flower tulip-right"></i>
+        <i class="fas fa-rose flower peony-top"></i>
 
-        <div class="letter" id="loveLetter" style="z-index: 9999;"></div>
+        <div class="letter" id="loveLetter" style="z-index: 9999;">
             <p><strong>Dragostea Mea,</strong></p>
             
             <p>Aș vrea să-ți spun cât de mult însemni pentru mine. Ești cea mai minunată persoană pe care am cunoscut-o, iar zâmbetul tău îmi luminează fiecare zi. Îți mulțumesc pentru tot ce faci și pentru că ești tu. Mi-ai dăruit nenumărate oportunități de a-ți demonstra iubirea și respectul pe care ți le port în inimă.</p>
@@ -50,16 +50,10 @@
         const wrapper = document.getElementById('envelopeWrapper');
         const letter = document.getElementById('loveLetter');
 
-        // Funcția de deschidere (atașată la plic)
         wrapper.addEventListener('click', (event) => {
-            // Oprește propagarea evenimentului, ca să nu se închidă imediat
             event.stopPropagation(); 
-            
-            // Doar deschide dacă nu e deja deschis
             if (!wrapper.classList.contains('open')) {
                 wrapper.classList.add('open'); 
-                
-                // Animația de ridicare a scrisorii
                 setTimeout(() => {
                     letter.style.opacity = 1;
                     letter.style.transform = 'translateY(-250px)'; 
@@ -67,16 +61,10 @@
             }
         });
 
-        // Funcția de închidere (atașată la întregul document)
         document.addEventListener('click', (event) => {
-            // Dacă plicul este deschis ȘI click-ul NU este pe plic/scrisoare
             if (wrapper.classList.contains('open') && !wrapper.contains(event.target)) {
-                
-                // Închide scrisoarea (o mută înapoi în plic)
                 letter.style.opacity = 0;
                 letter.style.transform = 'translateY(0)'; 
-                
-                // După ce scrisoarea a coborât, închide și clapa
                 setTimeout(() => {
                     wrapper.classList.remove('open'); 
                 }, 500);

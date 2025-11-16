@@ -1,8 +1,8 @@
 body {
     background: #f0f0f0; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* display: flex; - ELIMINAT */
+    /* justify-content: center; - ELIMINAT */
+    /* align-items: center; - ELIMINAT */
     margin: 0;
     font-family: sans-serif;
     overflow: auto; /* Permite derularea paginii */
@@ -14,6 +14,11 @@ body {
     cursor: pointer;
     perspective: 1000px;
     margin-top: 150px; 
+    
+    /* FIX CENTRARE */
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px; 
 }
 
 /* PLICUL */
@@ -88,7 +93,7 @@ body {
     top: 10%;
     left: 10%;
     border-radius: 5px;
-    z-index: 20; /* FIX FINAL: Setat la o valoare foarte mare */
+    z-index: 20; /* Z-INDEX MARE ÎN CAZUL ÎN CARE STILUL INLINE EȘUEAZĂ */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0; 
     transition: transform 1s ease, opacity 1s ease; 
@@ -105,7 +110,7 @@ body {
 /* ANIMAȚIA DE DESCHIDERE (Clasa adăugată prin JavaScript) */
 .envelope-wrapper.open .envelope-top {
     transform: rotateX(180deg); 
-    z-index: 0; /* Clapa se duce în spate, sub scrisoare */
+    z-index: -1; /* FIX FINAL: Mută clapa în spatele fundalului (dacă e posibil) */
 }
 .envelope-wrapper.open .heart {
     opacity: 0; 
@@ -116,7 +121,7 @@ body {
     position: absolute;
     font-size: 80px; 
     color: #cc0066;  
-    z-index: 0; /* Sub plic */
+    z-index: 0; 
     transition: transform 0.5s ease, opacity 0.5s ease; 
 }
 
