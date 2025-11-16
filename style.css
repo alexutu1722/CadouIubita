@@ -13,7 +13,8 @@ body {
 .envelope-wrapper {
     position: relative;
     cursor: pointer;
-    perspective: 1000px; /* Adaugă adâncime pentru animația 3D */
+    perspective: 1000px;
+    margin-top: 150px; /* NOU: Împinge tot plicul mai jos pe pagină */
 }
 
 /* PLICUL */
@@ -78,13 +79,11 @@ body {
 .heart:before { top: -15px; }
 .heart:after { left: 15px; }
 
-/* SCRISOAREA (Conținutul) - SECȚIUNEA CU AJUSTĂRILE DE ÎNĂLȚIME */
+/* SCRISOAREA (Conținutul) - FĂRĂ INĂLȚIME FIXĂ/SCROLL */
 .letter {
     position: absolute;
     width: 80%;
-    /* AJUSTARE: Permite scrisorii să se extindă */
-    max-height: 450px; 
-    overflow-y: auto; /* Adaugă bară de derulare dacă textul e prea lung */
+    /* Am eliminat max-height și overflow-y: auto pentru a preveni scroll-ul */
     background: white;
     padding: 20px;
     top: 10%;
@@ -93,7 +92,6 @@ body {
     z-index: 2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0; /* Invizibilă inițial */
-    /* Tranziție necesară pentru animația de deschidere/închidere */
     transition: transform 1s ease, opacity 1s ease; 
     text-align: left;
     line-height: 1.6;
