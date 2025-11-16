@@ -143,3 +143,40 @@ body {
     transform: translateX(-50%) rotate(10deg); 
 }
 /* SECȚIUNEA DE ASCUNDERE A FOST ELIMINATĂ DE AICI */
+/* Asigură-te că există suficient spațiu jos pe telefon */
+body {
+    /* ... restul codului body (nemodificat) ... */
+    min-height: 120vh; /* NOU: Crește înălțimea minimă pentru a face loc florii de jos */
+}
+
+/* * MEDIA QUERY: Ajustări specifice pentru ecrane mai mici de 600px 
+ * (Tipic pentru telefoane) 
+ */
+@media (max-width: 600px) {
+    
+    /* Poziționare pentru ROSE-LEFT (Inima 1) */
+    .rose-left {
+        top: 50px; /* Mut-o mai sus, lângă plic */
+        left: 10px; /* Mut-o spre marginea din stânga */
+        transform: rotate(-10deg);
+    }
+    
+    /* Poziționare pentru TULIP-RIGHT (Inima 2) */
+    .tulip-right {
+        top: 50px; /* Mut-o mai sus, lângă plic */
+        right: 10px; /* Mut-o spre marginea din dreapta */
+        transform: rotate(10deg);
+    }
+    
+    /* Poziționare pentru PEONY-TOP (Inima 3, cea de jos) */
+    .peony-top {
+        top: 90vh; /* O plasează jos, aproape de fundul ecranului */
+        left: 50%; /* Centrează orizontal */
+        transform: translateX(-50%) rotate(0deg); 
+    }
+    
+    /* Scrisoarea trebuie să iasă mai mult pentru a fi citită */
+    .envelope-wrapper.open .letter {
+        transform: translateY(-200px); /* Iese mai puțin decât pe desktop */
+    }
+}
