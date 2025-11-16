@@ -1,11 +1,10 @@
 body {
     background: #f0f0f0; 
-    /* display: flex; - ELIMINAT */
-    /* justify-content: center; - ELIMINAT */
-    /* align-items: center; - ELIMINAT */
     margin: 0;
     font-family: sans-serif;
     overflow: auto; /* Permite derularea paginii */
+    position: relative; /* NOU: Pentru a permite poziționarea absolută a florilor față de body */
+    min-height: 100vh; /* NOU: Asigură că body ocupă cel puțin toată înălțimea vizibilă */
 }
 
 /* Containerul plicului și scrisorii */
@@ -93,7 +92,7 @@ body {
     top: 10%;
     left: 10%;
     border-radius: 5px;
-    z-index: 20; /* Z-INDEX MARE ÎN CAZUL ÎN CARE STILUL INLINE EȘUEAZĂ */
+    z-index: 20; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0; 
     transition: transform 1s ease, opacity 1s ease; 
@@ -110,7 +109,7 @@ body {
 /* ANIMAȚIA DE DESCHIDERE (Clasa adăugată prin JavaScript) */
 .envelope-wrapper.open .envelope-top {
     transform: rotateX(180deg); 
-    z-index: -1; /* FIX FINAL: Mută clapa în spatele fundalului (dacă e posibil) */
+    z-index: -1; 
 }
 .envelope-wrapper.open .heart {
     opacity: 0; 
@@ -121,30 +120,34 @@ body {
     position: absolute;
     font-size: 80px; 
     color: #cc0066;  
-    z-index: 0; 
+    z-index: 0; /* Florile vor fi sub plic, dar deasupra fundalului */
     transition: transform 0.5s ease, opacity 0.5s ease; 
 }
 
+/* Poziționează florile față de body */
 .rose-left {
-    top: 60px; 
-    left: -60px; 
+    top: 20%; /* Poziția verticală pe pagină */
+    left: 10%; /* Poziția orizontală pe pagină */
     transform: rotate(-20deg);
 }
 
 .tulip-right {
-    top: 100px;
-    right: -50px; 
+    top: 70%;
+    right: 15%; 
     transform: rotate(30deg);
 }
 
 .peony-top {
-    top: -50px; 
-    left: 50%;
+    top: 5%; 
+    left: 80%;
     transform: translateX(-50%) rotate(10deg); 
 }
 
-/* Ascunde florile când plicul se deschide */
-.envelope-wrapper.open .flower {
+/* Ascunde florile când plicul se deschide (sau le animează) */
+/* NOU: Florile vor dispărea indiferent de elementul pe care se dă click (document) */
+.envelope-wrapper.open ~ .flower { /* Folosește selectorul de frate general (tilde) */
     opacity: 0;
     transform: translateY(20px) scale(0.8) rotate(0deg); 
 }
+/* Sau poți alege să nu le ascunzi deloc */
+/* .flower { transition: none; } dacă vrei să rămână vizibile */
