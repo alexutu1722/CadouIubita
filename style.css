@@ -120,14 +120,14 @@ body {
     position: absolute;
     font-size: 80px; 
     color: #cc0066;  
-    z-index: 0; /* Florile vor fi sub plic, dar deasupra fundalului */
+    z-index: 0; 
     transition: transform 0.5s ease, opacity 0.5s ease; 
 }
 
 /* Poziționează florile față de body */
 .rose-left {
-    top: 20%; /* Poziția verticală pe pagină */
-    left: 10%; /* Poziția orizontală pe pagină */
+    top: 20%; 
+    left: 10%; 
     transform: rotate(-20deg);
 }
 
@@ -142,12 +142,4 @@ body {
     left: 80%;
     transform: translateX(-50%) rotate(10deg); 
 }
-
-/* Ascunde florile când plicul se deschide (sau le animează) */
-/* NOU: Florile vor dispărea indiferent de elementul pe care se dă click (document) */
-.envelope-wrapper.open ~ .flower { /* Folosește selectorul de frate general (tilde) */
-    opacity: 0;
-    transform: translateY(20px) scale(0.8) rotate(0deg); 
-}
-/* Sau poți alege să nu le ascunzi deloc */
-/* .flower { transition: none; } dacă vrei să rămână vizibile */
+/* SECȚIUNEA DE ASCUNDERE A FOST ELIMINATĂ DE AICI */
