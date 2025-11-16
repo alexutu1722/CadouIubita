@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     font-family: sans-serif;
-    overflow: hidden;
+    overflow: hidden; /* Împiedică apariția scroll-ului pe întreaga pagină */
 }
 
 /* Containerul plicului și scrisorii */
@@ -54,7 +54,7 @@ body {
     transition: transform 0.5s ease; /* Animația de deschidere */
 }
 
-/* INIMA (Opțional) */
+/* INIMA */
 .heart {
     position: absolute;
     width: 30px;
@@ -78,13 +78,13 @@ body {
 .heart:before { top: -15px; }
 .heart:after { left: 15px; }
 
-/* SCRISOAREA (Conținutul) - AJUSTAT */
+/* SCRISOAREA (Conținutul) - SECȚIUNEA CU AJUSTĂRILE DE ÎNĂLȚIME */
 .letter {
     position: absolute;
     width: 80%;
-    /* AJUSTARE: Nu setăm înălțime fixă pentru a evita tăierea textului */
+    /* AJUSTARE: Permite scrisorii să se extindă */
     max-height: 450px; 
-    overflow-y: auto; /* Adaugă scroll dacă textul e prea lung */
+    overflow-y: auto; /* Adaugă bară de derulare dacă textul e prea lung */
     background: white;
     padding: 20px;
     top: 10%;
@@ -93,7 +93,8 @@ body {
     z-index: 2;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     opacity: 0; /* Invizibilă inițial */
-    transition: transform 1s ease, opacity 1s ease;
+    /* Tranziție necesară pentru animația de deschidere/închidere */
+    transition: transform 1s ease, opacity 1s ease; 
     text-align: left;
     line-height: 1.6;
 }
