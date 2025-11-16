@@ -1,12 +1,12 @@
 body {
-    background: #f0f0f0; /* Fundal plăcut */
+    background: #f0f0f0; 
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    /* height: 100vh; <--- LINIE ELIMINATĂ pentru a permite scroll */
     margin: 0;
     font-family: sans-serif;
-    overflow: auto; /* NOU: Permite derularea paginii pentru a vedea scrisoarea lungă */
+    overflow: auto; 
 }
 
 /* Containerul plicului și scrisorii */
@@ -83,7 +83,6 @@ body {
 .letter {
     position: absolute;
     width: 80%;
-    /* Fără max-height sau overflow intern */
     background: white;
     padding: 20px;
     top: 10%;
@@ -98,4 +97,16 @@ body {
 }
 
 .signature {
-    margin-top: 3
+    margin-top: 30px; /* CORECTAT: 30px adăugat */
+    font-style: italic;
+    text-align: right;
+}
+
+/* ANIMAȚIA DE DESCHIDERE (Clasa adăugată prin JavaScript) */
+.envelope-wrapper.open .envelope-top {
+    transform: rotateX(180deg); /* Clapa se deschide */
+    z-index: 0; /* Mută clapa sub scrisoare */
+}
+.envelope-wrapper.open .heart {
+    opacity: 0; /* Inima dispare când se deschide */
+}
