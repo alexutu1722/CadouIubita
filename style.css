@@ -1,12 +1,11 @@
 body {
-    background: #f0f0f0; 
+    background: #f0f0f0; /* Fundal plăcut */
     display: flex;
     justify-content: center;
     align-items: center;
-    /* height: 100vh; <--- LINIE ELIMINATĂ pentru a permite scroll */
     margin: 0;
     font-family: sans-serif;
-    overflow: auto; 
+    overflow: auto; /* Permite derularea paginii */
 }
 
 /* Containerul plicului și scrisorii */
@@ -25,6 +24,7 @@ body {
     position: relative;
     border-radius: 5px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 5; 
 }
 
 /* Partea de Jos (Corpul Plicului) */
@@ -97,7 +97,7 @@ body {
 }
 
 .signature {
-    margin-top: 30px; /* CORECTAT: 30px adăugat */
+    margin-top: 30px; 
     font-style: italic;
     text-align: right;
 }
@@ -109,4 +109,37 @@ body {
 }
 .envelope-wrapper.open .heart {
     opacity: 0; /* Inima dispare când se deschide */
+}
+
+/* Stiluri pentru flori (iconițe Font Awesome) */
+.flower {
+    position: absolute;
+    font-size: 80px; /* Dimensiunea florii/pictogramei */
+    color: #cc0066;  /* Culoarea florilor (un roz intens) */
+    z-index: 0; /* Sub plic */
+    transition: transform 0.5s ease, opacity 0.5s ease; 
+}
+
+.rose-left {
+    top: 60px; 
+    left: -60px; 
+    transform: rotate(-20deg);
+}
+
+.tulip-right {
+    top: 100px;
+    right: -50px; 
+    transform: rotate(30deg);
+}
+
+.peony-top {
+    top: -50px; 
+    left: 50%;
+    transform: translateX(-50%) rotate(10deg); 
+}
+
+/* Ascunde florile când plicul se deschide */
+.envelope-wrapper.open .flower {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8) rotate(0deg); 
 }
